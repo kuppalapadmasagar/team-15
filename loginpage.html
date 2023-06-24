@@ -1,0 +1,192 @@
+<html lang="en">
+ <head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+ <title>Login page</title>
+ <link
+ href="https://fonts.googleapis.com/css?family=Raleway"
+ rel="stylesheet"
+ />
+ <style>
+ * {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ /* 
+ -May want to add "border-box for "box-sizing so padding does not affect width
+ -Reset margin and padding 
+ */
+ }
+ body {
+ background-color:#344a72;
+ font-family: 'Raleway', sans-serif;
+ /* 
+ -Background color is #344a72
+ */
+ }
+ a {
+ text-decoration: none;
+ /* 
+ Underlined links are ugly :)
+ */
+ }
+ #container {
+ 
+ background-color: aliceblue;
+ border-radius: 5px;
+ width: 500px;
+ height: 1000px;
+ margin: auto;
+ margin-top: 40px;
+ padding: 20px;
+ max-width: 400px;
+ max-height: 750px;
+ /* 
+ -Remember, margin: auto on left and right will center a block element 
+ -I would also set a "max-width" for responsiveness
+ -May want to add some padding
+ */
+ }
+ .form-wrap h1,
+ .form-wrap p {
+ text-align: center;
+ padding: 5px;
+ /* 
+ May want to center these
+ */
+ }
+ .form-wrap .form-group {
+ color: rgb(110, 108, 105);
+ border: 2px solid rgb(255, 254, 254) ;
+ padding: 5px;
+ 
+ /* 
+ Each label, input is wrapped in .form-group
+ */
+ }
+ .form-wrap .form-group label {
+ display: block;
+ margin: 10px 4px;
+ padding: 10px 4px;
+ /* 
+ Label should be turned into a block element
+ */
+ }
+ .form-wrap .form-group input {
+ width: 100%;
+ padding: 10px;
+ border: #ddd 1px solid;
+ border-radius: 5px;
+ 
+ /* 
+ Inputs should reach accross the .form-wrap 100% and have some padding
+ */
+ }
+ .form-wrap button {
+ display: block;
+ color: white;
+ border: none;
+ position: relative;
+ padding: 10px;
+ margin-top: 10px;
+ margin-right: 5px;
+ width: 360px;
+ border-radius: 5px;
+ background: #49c1a2;
+ /* 
+ Button should wrap accross 100% and display as block
+ Background color for button is #49c1a2
+ */
+ }
+ .form-wrap button:hover {
+ margin-top: 10px;
+ background-color: #37a08e ;
+ /* 
+ Hover background color for button is #37a08e
+ */
+ }
+ .form-wrap .bottom-text {
+ margin-top: 70px;
+ text-align: center;
+ margin-bottom: 10px;
+ 
+ /* 
+ Bottom text is smaller
+ */
+ }
+ button {
+ position: relative;
+ top: 24px;
+ }
+ footer {
+ margin: 20px;
+ text-align: center;
+ color: white;
+ /* 
+ Should be centered
+ */
+ }
+ footer a {
+ color: #49c1a2;
+ /* 
+ Footer link color is #49c1a2
+ */
+ }
+ </style>
+ </head>
+ <body>
+ <div id="container">
+ <div class="form-wrap">
+ <h1>Sign Up</h1>
+ <p>It's free and only takes a minute</p>
+ <form action="https://sheetdb.io/api/v1/0qonds33yt2h3" method="post" id="sheetdb-form">
+ <div class="form-group">
+ <label for="first-name">First Name</label>
+ <input type="text" name="data[firstName]" id="first-name" />
+ </div>
+ <div class="form-group">
+ <label for="last-name">Last Name</label>
+ <input type="text" name="data[lastName]" id="last-name" />
+ </div>
+ <div class="form-group">
+ <label for="email">Email</label>
+ <input type="email" name="data[email]" id="email" />
+ </div>
+ <div class="form-group">
+ <label for="password">Password</label>
+ <input type="password" name="data[password]" id="password" />
+ </div>
+ <div class="form-group">
+ <label for="password2">Confirm Password</label>
+ <input type="password" name="data[pasword2]" id="password2" />
+ </div>
+ <button type="submit" class="btn"><a>Sign up</a></button>
+ <p class="bottom-text">
+ By clicking the Sign Up button, you agree to our
+ <a href="#">Terms & Conditions</a> and
+ <a href="#">Privacy Policy</a>
+ </p>
+ </form>
+ <button type="submit" class="btn"><a href="HOME PAGE1.html">submit</a></button>
+ <script>
+  var form = document.getelementbyid('sheetdb-form');
+form.addeventlistener("submit", e => {
+  e.preventdefault();
+  fetch(form.action, {
+    method : "post" ,
+    body: new formdata(document.getElementById("sheetdb-form")),
+  }).then(
+    response => {
+      window.open('d.html', 'blank');
+    }
+  );
+});
+</script>
+ </div>
+ <footer>
+ <p>Already have an account? <a href="#">Login Here</a></p>
+ </footer>
+ </div>
+ </body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<style>
+body{
+margin:20px;
+border: 5px solid black;
+background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXStr9XdbZpjnY_oW9sM8pClFMJ6ZKHnUC1h_3-M81XiNYoAJJomPW25fr50ugTZac7XU&usqp=CAU');
+  padding-top: 50px;
+  padding-right: 150px;
+  padding-bottom: 300px;
+  padding-left: 150px;
+    text-align: center;
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+h1{
+    text-align: center;
+    color:black;
+    text-shadow: 2px 2px;
+    font-family: Times New Roman;
+    font-size: 300%;
+
+}   
+p{
+    color: darkred;
+}
+
+
+</style>
+<script>
+function add(){
+var num1,num2,num3,num4,num5,num6;
+num1=Number(document.getElementById("first").value);
+num2=Number(document.getElementById("second").value);
+num3=Number(document.getElementById("third").value);
+num4=Number(document.getElementById("fourth").value);
+num5=Number(document.getElementById("fifth").value);
+num6=num1+num2+num3+num4+num5 ;
+document.getElementById("answer").value= num6;
+}
+</script>
+</head>
+<body>
+<div align ="center">
+    <h1 >BILL</h1>
+    <label><h4>Enter the appiontment charges</h4></label>
+    <input type="number"  id="first" > <br>
+    <label><h4>Enter the operations charges<h4></label>
+    <input type="number"  id="second" ><br>
+    <label><h4>Enter the Medical charges<h4></label>
+    <input type="number"  id="third" ><br>
+    <label><h4>Enter the Service charges<h4></label>
+    <input type="number"  id="fourth"  ><br>
+    <label><h4>Any additional charges<h4></label>
+    <input type="number"  id="fifth" > <br>
+    <br><br>
+    <button onclick="add()">Total</button><br>
+    <h3>Amount To Be Paid:<input id="answer"></h3>
+    <p><b>NOTE:</b> if you have any questions regarding this invoice please contact hospital management</p>
+</div>
+</body>
+</html>
